@@ -6,11 +6,20 @@ chat with gpt-3.5-turbo。
 ``` bash
 pip install openai
 ```
-3.  运行`chatgpt.py`文件
+3. 在`chatgpt.py`添加你的OpenAI API_key（在[OpenAI的账户中心可以找到](https://platform.openai.com/account/api-keys)）
+``` Python  
+openai.api_key="Your api_key"
+```
+4.  运行`chatgpt.py`文件
 ``` bash
 python chatgpt.py
 ```
-
+> 如果出现无法连接的错误，可以添加代理解决，可以添加如下代码：
+> ``` Python    
+> import os
+> os.environ["http_proxy"] = "http://127.0.0.1:10809"  #v2rayN的端口为10809，clash的为7890
+> os.environ["https_proxy"] = "http://127.0.0.1:10809" 
+> ```
 ## 如何调教gpt 3.5 turbo
 `gpt 3.5 turbo` 的模型的每一条消息都有一个角色('system','user','assistant')和内容(即消息的内容)，根据OpenAI官网的介绍，系统消息有助于设定助理的行为，所以我们可以通过这些角色的属性将`gpt 3.5 turbo`给设定为一个猫娘。接下来就根据这个方法，在github上找了一个调教话术进行设置，示例如下：(该实例的文本来自[chatGPT](https://github.com/2249899756/chatGPT)),个人认为可以通过多个role的设置来提升效果，同时也可以设置任何你想让其模仿的角色。
 ``` Python
