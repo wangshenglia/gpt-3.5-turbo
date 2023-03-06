@@ -1,6 +1,6 @@
 import openai
 import tiktoken
-openai.api_key="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"
+openai.api_key="add your openai_key"
 
 
 
