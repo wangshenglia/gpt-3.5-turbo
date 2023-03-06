@@ -1,5 +1,7 @@
 # gpt-3.5-turbo
 chat with gpt-3.5-turbo。
+## Update
+添加统计message的token的函数，当message的token总数达到4096时就会无法在输入，但是为了关联上下文，只能将每次的输入和输出全部放在添加到message，这样会导致token越来越多，对话10次可能就会达到上限了，想要持续对话就必须清除一部分message，但是清理可能会对上下文造成影响，这个问题仍需解决。
 ## Useage
 1. 首先需要安装Python
 2. 安装OpenAi模块(OpenAi的版本需大于V0.27.0)
